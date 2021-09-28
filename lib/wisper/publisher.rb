@@ -38,9 +38,9 @@ module Wisper
     #   end
     #
     # @return [self]
-    def broadcast(event, *args)
+    def broadcast(event, *args, **options)
       registrations.each do | registration |
-        registration.broadcast(clean_event(event), self, *args)
+        registration.broadcast(clean_event(event), self, *args, **options)
       end
       self
     end
